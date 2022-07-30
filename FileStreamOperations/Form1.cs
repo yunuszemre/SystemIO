@@ -9,6 +9,9 @@ namespace FileStreamOperations
         public Form1()
         {
             InitializeComponent();
+            Person person = new Person();
+            person.FirstName = "Yunus";
+            person.LastName = "Teke";
         }
         private string filePath;
         private void btnChooseFile_Click(object sender, EventArgs e)
@@ -21,6 +24,7 @@ namespace FileStreamOperations
             WriteFile();
         }
 
+        private Button btn = new Button();
         private void btnReadFile_Click(object sender, EventArgs e)
         {
             ReadFile();
@@ -86,5 +90,12 @@ namespace FileStreamOperations
                 MessageBox.Show($"{ex.Message}");
             }
         }
+    }
+
+    public class Person
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
     }
 }
